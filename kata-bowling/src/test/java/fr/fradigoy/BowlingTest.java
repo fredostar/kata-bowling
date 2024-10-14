@@ -31,4 +31,12 @@ public class BowlingTest {
         rollMany(20, 1);
         assertThat(20).isEqualTo(g.score());
     }
+
+    @Test
+    void oneSpare() {
+        rollMany(2, 5); // spare
+        g.roll(7);
+        rollMany(17, 0);
+        assertThat(g.score()).isEqualTo(24);
+    }
 }
